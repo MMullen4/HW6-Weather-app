@@ -7,13 +7,24 @@ function GetWeather(city) {
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey +"&units=imperial";
     fetch(queryURL)
         .then(function (response) {
-            console.log(response)
+        //    console.log(response)
             return response.json()
         }).then(function (data) {
-        console.log(data)
+            console.log(data)  //apply current weather 
+            document.querySelector("#CityName").textContent=data.name
+            GetForcast(data.coord.lat, data.coord.lon);
     })
 }
-
+function GetForcast(lat, lon) {
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&units=imperial";
+    fetch(queryURL)
+        .then(function (response) {
+        //    console.log(response)
+            return response.json()
+        }).then(function (data) {
+        console.log(data) // apply forcasted weather
+    })
+}
 searchBTN.addEventListener("click", function () {
     GetWeather(cityInput.value)
 })
