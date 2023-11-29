@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
@@ -14,11 +15,33 @@
         <button id="search-button">Search</button>
         <div id="weather-display">
             <h2>Current Weather</h2>
-            <div id="current-weather"><p id="CityName" ></p></div>
+            <div id="current-weather">
+                <div>
+                    <p id="CityName"></p>
+                    <span id="icon_div"></span>
+                </div>
+                <p id="date"></p>
+                <p id="CurrentTemp"></p>
+                <p id="Wind"></p>
+                <p id="Humidity"></p>
+            </div>
             <h2>5-Day Forecast</h2>
             <div id="forecast"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
+    <section class="Cities">
+        <aside>
+            <button>Los Angeles</button>
+            <button>New York</button>
+            <button>Chicago</button>
+            <button>San Francisco</button>
+            <button>Dallas</button>
+            <button>Atlanta</button>
+            <button>Cream Ridge, NJ</button>
+        </aside>
+    </section>
+    </nav>
 </body>
+
 </html>

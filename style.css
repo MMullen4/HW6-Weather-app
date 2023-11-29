@@ -22,3 +22,30 @@ button {
 h2 {
     margin-bottom: 10px;
 }
+
+nav {
+    display: flex;
+    justify-content: left;
+    margin-top: 5%;
+}
+
+.Cities button {
+    width: 250px;
+    margin: 0 .5%;
+    font-size: 150%;
+    color: #13293d;
+    background-color: #fff;
+    border: 3px solid #13293d;
+}
+
+aside {
+    flex: 1;
+    background-color: #b9c6ae;
+    padding: 80px;
+    text-align: left;
+}
+
+.card {
+    padding: 10px;
+    border: 2px solid black;
+}
