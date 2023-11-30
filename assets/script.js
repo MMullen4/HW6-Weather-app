@@ -42,14 +42,11 @@ function GetForcast(lat, lon) {
                     var icon = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png"
                     var image_tag = document.createElement("img")
                     image_tag.setAttribute("src", icon)
-
                     var temp_tag = document.createElement("p")
-                    temp_tag.textContent = 
-
 
                     //create p tags for temp wind & humidity
 
-                    card.append(date_tag, image_tag, temp_tag)
+                    card.append(date_tag, image_tag)
                     document.querySelector("#forecast").append(card)
                 }
             }
@@ -57,10 +54,9 @@ function GetForcast(lat, lon) {
 }
 searchBTN.addEventListener("click", function () {
     GetWeather(cityInput.value)
-    
     if (searchHistory.length === 5) {
         searchHistory.length = 4
     }
     searchHistory.push(cityInput.value)
-    localStorage.setItem("localCity",JSON.stringify(searchHistory))
+    localStorage.setItem("localCity", JSON.stringify(searchHistory))
 })
