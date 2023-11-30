@@ -46,7 +46,7 @@ function GetForcast(lat, lon) {
                     var temp_tag = document.createElement("h6")
                     temp_tag.textContent = "Temp: " + data.list[i].main.temp + " F"
                     var wind_tag = document.createElement("h6")
-                    wind_tag.textContent = "Wind : " + data.list[i].wind.speed + "MPH"
+                    wind_tag.textContent = "Wind : " + data.list[i].wind.speed + " MPH"
                     var hum_tag = document.createElement("h6")
                     hum_tag.textContent = "Humidity: " + data.list[i].main.humidity + "%"
                     card.append(date_tag, image_tag, temp_tag, wind_tag, hum_tag)

@@ -10,7 +10,7 @@ Clicking on a city in the search history will present current and future conditi
 
 ## Visuals
 Icons for weather conditions are included for current and future dates.
-
+<../Weather Dashboard.pdf>
 
 ## Installation
 N/A
