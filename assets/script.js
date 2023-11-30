@@ -2,6 +2,7 @@ var APIKey = "ea678db88cb7433b187a76d0ea5c3d5b";
 var city;
 var searchBTN = document.querySelector("#search-button")
 var cityInput = document.querySelector("#city-input")
+var searchHistory = JSON.parse(localStorage.getItem("localCity")) || []
 
 function GetWeather(city) {
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
@@ -56,4 +57,10 @@ function GetForcast(lat, lon) {
 }
 searchBTN.addEventListener("click", function () {
     GetWeather(cityInput.value)
+    
+    if (searchHistory.length === 5) {
+        searchHistory.length = 4
+    }
+    searchHistory.push(cityInput.value)
+    localStorage.setItem("localCity",JSON.stringify(searchHistory))
 })
