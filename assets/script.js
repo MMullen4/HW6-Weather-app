@@ -13,13 +13,13 @@ function GetWeather(city) {
             console.log(data)  //apply current weather 
             document.querySelector("#CityName").textContent = data.name
             var icon = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
-            var image_tag = document.createElement("img")
-            image_tag.setAttribute("src", icon)
-            document.querySelector("#icon_div").innerHTML = ""
-            document.querySelector("#icon_div").append(image_tag)
-            document.querySelector("#date").textContent = new Date(data.dt * 1000).toLocaleDateString()
-            document.querySelector("#CurrentTemp").textContent = "Current Temp: " + data.main.temp + "F"
-            document.querySelector("#Wind").textContent = "Wind: " + data.wind.speed + "MPH"
+            var image_tag = document.createElement("img") //dynamically creating image tag for span tag
+            image_tag.setAttribute("src", icon) // adding source icon for image
+            document.querySelector("#icon_div").innerHTML = "" // clears out icon_div
+            document.querySelector("#icon_div").append(image_tag) // attaches icon to image_tag
+            document.querySelector("#date").textContent = new Date(data.dt * 1000).toLocaleDateString()  //formatting code to imperial
+            document.querySelector("#CurrentTemp").textContent = "Current Temp: " + data.main.temp + " F"
+            document.querySelector("#Wind").textContent = "Wind: " + data.wind.speed + " MPH"
             document.querySelector("#Humidity").textContent = "Humidity: " + data.main.humidity + "%"
             GetForcast(data.coord.lat, data.coord.lon);
         })
@@ -33,22 +33,22 @@ function GetForcast(lat, lon) {
         }).then(function (data) {
             console.log(data) // apply forcasted weather
             for (i = 0; i < data.list.length; i++) {
-                if (data.list[i].dt_txt.includes("12:00:00")) {
-                    var card = document.createElement("div")
-                    card.setAttribute("class", "card")
+                if (data.list[i].dt_txt.includes("12:00:00")) { // searches for noon for next 5 days
+                    var card = document.createElement("div") // dynamic html div tag
+                    card.setAttribute("class", "card")  // adding the class of card to style div
                     var date_tag = document.createElement("p")
                     date_tag.textContent = new Date(data.list[i].dt * 1000).toLocaleDateString()
-
                     var icon = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png"
                     var image_tag = document.createElement("img")
                     image_tag.setAttribute("src", icon)
 
                     var temp_tag = document.createElement("p")
+                    temp_tag.textContent = 
 
 
                     //create p tags for temp wind & humidity
 
-                    card.append(date_tag, image_tag)
+                    card.append(date_tag, image_tag, temp_tag)
                     document.querySelector("#forecast").append(card)
                 }
             }

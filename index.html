@@ -17,7 +17,7 @@
             <h2>Current Weather</h2>
             <div id="current-weather">
                 <div>
-                    <p id="CityName"></p>
+                    <h2 id="CityName"></h2>
                     <span id="icon_div"></span>
                 </div>
                 <p id="date"></p>
@@ -26,20 +26,27 @@
                 <p id="Humidity"></p>
             </div>
             <h2>5-Day Forecast</h2>
-            <div id="forecast"></div>
+            <div id="forecast">
+                <div>
+                    <p id="temp_tag"></p>
+                    <p id="wind_tag"></p>
+                    <p id="humid_tag"></p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./assets/script.js"></script>
     <section class="Cities">
-        <aside>
-            <button>Los Angeles</button>
-            <button>New York</button>
-            <button>Chicago</button>
-            <button>San Francisco</button>
-            <button>Dallas</button>
-            <button>Atlanta</button>
-            <button>Cream Ridge, NJ</button>
-        </aside>
+        <div id="city_list">
+            <div>
+                <button>Los Angeles</button>
+                <button>New York</button>
+                <button>Chicago</button>
+                <button>San Francisco</button>
+                <button>Dallas</button>
+                <button>Atlanta</button>
+                <button>Cream Ridge, NJ</button>
+            </div>
     </section>
     </nav>
 </body>
