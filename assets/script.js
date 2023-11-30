@@ -38,17 +38,17 @@ function GetForcast(lat, lon) {
                 if (data.list[i].dt_txt.includes("12:00:00")) { // searches for noon for next 5 days
                     var card = document.createElement("div") // dynamic html div tag
                     card.setAttribute("class", "card")  // adding the class of card to style div
-                    var date_tag = document.createElement("p")
+                    var date_tag = document.createElement("h5")
                     date_tag.textContent = new Date(data.list[i].dt * 1000).toLocaleDateString()
                     var icon = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png"
                     var image_tag = document.createElement("img")
                     image_tag.setAttribute("src", icon)
                     var temp_tag = document.createElement("h6")
-                    temp_tag.textContent = data.list[i].main.temp
+                    temp_tag.textContent = "Temp: " + data.list[i].main.temp + " F"
                     var wind_tag = document.createElement("h6")
-                    wind_tag.textContent =data.list[i].wind.speed
+                    wind_tag.textContent = "Wind : " + data.list[i].wind.speed + "MPH"
                     var hum_tag = document.createElement("h6")
-                    hum_tag.textContent = data.list[i].main.humidity
+                    hum_tag.textContent = "Humidity: " + data.list[i].main.humidity + "%"
                     card.append(date_tag, image_tag, temp_tag, wind_tag, hum_tag)
                     document.querySelector("#forecast").append(card)
                 }
