@@ -2,8 +2,8 @@ Project Name
 5 Day Weather Forecast
 
 ## Description
-This site is a weather dashboard with form inputs.  Searching for a city will present current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city. Clicking on a city in the search history wiil present with current and future conditions for that city again.
+This site is a weather dashboard with form inputs.  Searching for a city will present current and future (5 day) conditions for that city and that city will be added to the search history
+Clicking on a city in the search history will present current and future conditions for that city again.
 
 
 

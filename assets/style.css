@@ -38,7 +38,7 @@ nav {
     border: 3px solid #13293d;
 }
 
-#city_list {
+.search_history {
     display: block;
     flex: 1;
     background-color: #b9c6ae;
