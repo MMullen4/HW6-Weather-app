@@ -33,6 +33,7 @@ function GetForcast(lat, lon) {
             return response.json()
         }).then(function (data) {
             console.log(data) // apply forcasted weather
+            document.querySelector("#forecast").innerHTML = ''; //clears old forecast 
             for (i = 0; i < data.list.length; i++) {
                 if (data.list[i].dt_txt.includes("12:00:00")) { // searches for noon for next 5 days
                     var card = document.createElement("div") // dynamic html div tag
@@ -42,11 +43,13 @@ function GetForcast(lat, lon) {
                     var icon = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png"
                     var image_tag = document.createElement("img")
                     image_tag.setAttribute("src", icon)
-                    var temp_tag = document.createElement("p")
-
-                    //create p tags for temp wind & humidity
-
-                    card.append(date_tag, image_tag)
+                    var temp_tag = document.createElement("h6")
+                    temp_tag.textContent = data.list[i].main.temp
+                    var wind_tag = document.createElement("h6")
+                    wind_tag.textContent =data.list[i].wind.speed
+                    var hum_tag = document.createElement("h6")
+                    hum_tag.textContent = data.list[i].main.humidity
+                    card.append(date_tag, image_tag, temp_tag, wind_tag, hum_tag)
                     document.querySelector("#forecast").append(card)
                 }
             }
