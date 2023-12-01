@@ -53,7 +53,7 @@ function GetForcast(lat, lon) {
                     document.querySelector("#forecast").append(card)
                 }
             }
-        })
+        }) .catch
 }
 function renderSavedCities() {
     document.querySelector("#history-container").innerHTML = ""
