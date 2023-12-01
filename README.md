@@ -5,8 +5,8 @@ Project Name
 This site is a weather dashboard with form inputs.  Searching for a city will present current and future (5 day) conditions for that city and that city will be added to the search history
 Clicking on a city in the search history will present current and future conditions for that city again.
 
-[
-](https://mmullen4.github.io/HW6-Weather-app/)
+
+(https://mmullen4.github.io/HW6-Weather-app/)
 
 ## Visuals
 Icons for weather conditions are included for current and future dates.
