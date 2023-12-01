@@ -23,15 +23,37 @@ function GetWeather(city) {
             document.querySelector("#Wind").textContent = "Wind: " + data.wind.speed + " MPH"
             document.querySelector("#Humidity").textContent = "Humidity: " + data.main.humidity + "%"
             GetForcast(data.coord.lat, data.coord.lon);
-        })
+        })function GetWeather(city) {
+            var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
+            fetch(queryURL)
+                .then(function (response) {
+                    console.log(response)
+                    return response.json()
+                }).then(function (data) {
+                    console.log(data)  //apply current weather 
+                    document.querySelector("#CityName").textContent = data.name
+                    var icon = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
+                    var image_tag = document.createElement("img") //dynamically creating image tag for span tag
+                    image_tag.setAttribute("src", icon) // adding source icon for image
+                    document.querySelector("#icon_div").innerHTML = "" // clears out icon_div
+                    document.querySelector("#icon_div").append(image_tag) // attaches icon to image_tag
+                    document.querySelector("#date").textContent = new Date(data.dt * 1000).toLocaleDateString()  //formatting code to imperial
+                    document.querySelector("#CurrentTemp").textContent = "Current Temp: " + data.main.temp + " F"
+                    document.querySelector("#Wind").textContent = "Wind: " + data.wind.speed + " MPH"
+                    document.querySelector("#Humidity").textContent = "Humidity: " + data.main.humidity + "%"
+                    GetForcast(data.coord.lat, data.coord.lon);
+                }).catch((error) => {
+                    console.error(error);
+                });
+        }
 }
 function GetForcast(lat, lon) {
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&units=imperial";
-    
+
     fetch(queryURL)
         .then(function (response) {
-            //    console.log(response)
-            console.log(queryURL)
+            //console.log(response)
+            //console.log(queryURL)
             return response.json()
         }).then(function (data) {
             console.log(data) // apply forcasted weather
@@ -55,7 +77,7 @@ function GetForcast(lat, lon) {
                     document.querySelector("#forecast").append(card)
                 }
             }
-        }) .catch
+        })
 }
 function renderSavedCities() {
     document.querySelector("#history-container").innerHTML = ""
