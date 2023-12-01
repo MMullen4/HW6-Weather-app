@@ -27,11 +27,11 @@ function GetWeather(city) {
 }
 function GetForcast(lat, lon) {
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&units=imperial";
-    console.log(queryURL)
+    
     fetch(queryURL)
         .then(function (response) {
             //    console.log(response)
-            
+            console.log(queryURL)
             return response.json()
         }).then(function (data) {
             console.log(data) // apply forcasted weather
