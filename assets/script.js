@@ -68,8 +68,6 @@ searchBTN.addEventListener("click", function () {
     GetWeather(cityInput.value)
     if (searchHistory.length === 5) {
         var removedElement = searchHistory.shift() //removes 1st element in array
-
-
     }
     searchHistory.push(cityInput.value)
     localStorage.setItem("localCity", JSON.stringify(searchHistory))
