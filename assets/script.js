@@ -23,7 +23,7 @@ function GetWeather(city) {
             document.querySelector("#Wind").textContent = "Wind: " + data.wind.speed + " MPH"
             document.querySelector("#Humidity").textContent = "Humidity: " + data.main.humidity + "%"
             GetForcast(data.coord.lat, data.coord.lon);
-        })function GetWeather(city) {
+        }); function GetWeather(city) {
             var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
             fetch(queryURL)
                 .then(function (response) {
