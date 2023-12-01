@@ -34,7 +34,7 @@ function GetForcast(lat, lon) {
         }).then(function (data) {
             console.log(data) // apply forcasted weather
             document.querySelector("#forecast").innerHTML = ''; //clears old forecast 
-            for (i = 0; i < data.list.length; i++) {
+            for (var i = 0; i < data.list.length; i++) {
                 if (data.list[i].dt_txt.includes("12:00:00")) { // searches for noon for next 5 days
                     var card = document.createElement("div") // dynamic html div tag
                     card.setAttribute("class", "card")  // adding the class of card to style div
@@ -55,11 +55,24 @@ function GetForcast(lat, lon) {
             }
         })
 }
+function renderSavedCities() {
+    document.querySelector("#history-container").innerHTML = ""
+    for (var i = 0; i < searchHistory.length; i++) {
+        var cityFolder = document.createElement("div")
+        cityFolder.textContent = searchHistory[i]
+        cityFolder.setAttribute("onclick", `GetWeather("${searchHistory[i]}")`)
+        document.querySelector("#history-container").append(cityFolder)
+    }
+}
 searchBTN.addEventListener("click", function () {
     GetWeather(cityInput.value)
     if (searchHistory.length === 5) {
-        searchHistory.length = 4
+        var removedElement = searchHistory.shift() //removes 1st element in array
+
+
     }
     searchHistory.push(cityInput.value)
     localStorage.setItem("localCity", JSON.stringify(searchHistory))
+    renderSavedCities()
 })
+renderSavedCities();

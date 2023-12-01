@@ -15,22 +15,28 @@
         <h1>Weather Dashboard</h1>
         <input type="text" id="city-input" placeholder="Enter city name">
         <button id="search-button">Search</button>
-        <div id="weather-display">
-            <h2>Current Weather</h2>
-            <div id="current-weather">
-                <div>
-                    <h2 id="CityName"></h2>
-                    <span id="icon_div"></span>
+        <div class="row">
+            <div class="col-3" id="history-container"> </div>
+            <div class="col-9">
+                <div id="weather-display">
+                    <h2>Current Weather</h2>
+                    <div id="current-weather">
+                        <div>
+                            <h2 id="CityName"></h2>
+                            <span id="icon_div"></span>
+                        </div>
+                        <h3 id="date"></h3>
+                        <h4 id="CurrentTemp"></h4>
+                        <h4 id="Wind"></h4>
+                        <h4 id="Humidity"></h4>
+                    </div>
+                    <h2>5-Day Forecast</h2>
+                    <div id="forecast">
+                    </div>
                 </div>
-                <h3 id="date"></h3>
-                <h4 id="CurrentTemp"></h4>
-                <h4 id="Wind"></h4>
-                <h4 id="Humidity"></h4>
-            </div>
-            <h2>5-Day Forecast</h2>
-            <div id="forecast">
-            </div>
+            </div> 
         </div>
+        
     </div>
     <script src="./assets/script.js"></script>
     <section class="search_history"></section>
