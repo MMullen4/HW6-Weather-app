@@ -5,7 +5,7 @@ var cityInput = document.querySelector("#city-input")
 var searchHistory = JSON.parse(localStorage.getItem("localCity")) || []
 
 function GetWeather(city) {
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
     fetch(queryURL)
         .then(function (response) {
             console.log(response)
