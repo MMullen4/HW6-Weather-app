@@ -23,6 +23,7 @@ function GetWeather(city) {
             document.querySelector("#Wind").textContent = "Wind: " + data.wind.speed + " MPH"
             document.querySelector("#Humidity").textContent = "Humidity: " + data.main.humidity + "%"
             GetForcast(data.coord.lat, data.coord.lon);
+            
         });
 }
 
@@ -70,11 +71,12 @@ function renderSavedCities() {
 }
 searchBTN.addEventListener("click", function () {
     GetWeather(cityInput.value)
+    
     if (searchHistory.length === 5) {
         var removedElement = searchHistory.shift() //removes 1st element in array
     }
     searchHistory.push(cityInput.value)
     localStorage.setItem("localCity", JSON.stringify(searchHistory))
-    renderSavedCities()
+    renderSavedCities();
 })
 renderSavedCities();
