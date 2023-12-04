@@ -78,5 +78,6 @@ searchBTN.addEventListener("click", function () {
     searchHistory.push(cityInput.value)
     localStorage.setItem("localCity", JSON.stringify(searchHistory))
     renderSavedCities();
+    cityInput.value = "";
 })
 renderSavedCities();

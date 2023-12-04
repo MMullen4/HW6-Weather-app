@@ -12,12 +12,26 @@
 
 <body>
     <div class="container">
-        <h1>Weather Dashboard</h1>
-        <input type="text" id="city-input" placeholder="Enter city name">
-        <button id="search-button">Search</button>
         <div class="row">
-            <div class="col-3" id="history-container"></div>
-            <div class="col-9">
+            <h1>Weather Dashboard</h1>
+            <!-- <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="search-button">Search</button> -->
+            <div class="col-md-6">
+                <div class="input-group mb-3 col-md-3">
+                    <input type="text" class="form-control" placeholder="Enter city name" id="city-input"
+                        aria-label="Recipient's username" aria-describedby="search-button">
+                    <button class="btn btn-outline-secondary" type="button" id="search-button">Button</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <h2>Search History</h2>
+                <div id="history-container"></div>
+            </div>
+            <div class="col-md-9 col-sm-12">
                 <div id="weather-display">
                     <h2>Current Weather</h2>
                     <div id="current-weather">
@@ -34,9 +48,9 @@
                     <div id="forecast">
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        
+
     </div>
     <script src="./assets/script.js"></script>
     <section class="search_history"></section>
