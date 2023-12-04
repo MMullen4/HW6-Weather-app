@@ -19,6 +19,16 @@ button {
     margin-top: 20px;
 }
 
+#history-container {
+    background-image: var(--bs-gradient);
+    font-size: larger;
+    padding: 20px;
+    width: 225px;
+    text-align: center;
+    border: 2px solid black;
+    background-color: #a579f0;
+}
+
 h2 {
     margin-bottom: 10px;
 }
@@ -52,7 +62,8 @@ nav {
     display: inline-block;
     padding: 10px;
     width: 200px;
-    text-align: center;;
+    text-align: center;
+    ;
     border: 2px solid black;
     background-color: #79d4f0;
 }
